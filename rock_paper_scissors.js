@@ -9,7 +9,7 @@ function playRound(playerChoice, computerChoice) {
         return undefined;
     }
     const makeValid = playerChoice.charAt(0).toUpperCase() 
-                        + playerChoice.slice(1).toLowerCase;
+                        + playerChoice.slice(1).toLowerCase();
     if (
         makeValid !== "Rock" ||
         makeValid !== "Paper" ||
