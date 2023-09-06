@@ -8,11 +8,10 @@ function playRound(playerChoice, computerChoice) {
     if (playerChoice.length === 0 || computerChoice.length === 0) {
         return undefined;
     }
-    const makeValid = playerChoice.charAt(0).toUpperCase() 
-                        + playerChoice.slice(1).toLowerCase();
+    const makeValid = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
     if (
-        makeValid !== "Rock" ||
-        makeValid !== "Paper" ||
+        makeValid !== "Rock" &&
+        makeValid !== "Paper" &&
         makeValid !== "Scissors"
     ){
         throw new Error("Invalid Input.");
