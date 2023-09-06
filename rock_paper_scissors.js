@@ -55,3 +55,5 @@ function game() {
         return "It is a Draw.";
     }
 }
+
+console.log(game());
