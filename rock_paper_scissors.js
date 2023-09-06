@@ -3,6 +3,7 @@ function getComputerChoice() {
     let randomInt = Math.floor(Math.random() * 3);
     return choices[randomInt];
 }
+
 function playRound(playerChoice, computerChoice) {
     if (playerChoice.length === 0 || computerChoice.length === 0) {
         return undefined;
@@ -30,5 +31,27 @@ function playRound(playerChoice, computerChoice) {
         return "You Win! Scissors beats Paper";
     } else {
         return "It is a draw"
+    }
+}
+function game() {
+    let player = 0;
+    let computer = 0;
+    for (let i = 0; i < 5; i++){
+        playerChoice = prompt("Enter choice: ");
+        computerChoice = getComputerChoice();
+        console.log(playRound(playerChoice, computerChoice));
+        if (playRound(playerChoice, computerChoice).charAt(4) === 'W') {
+            player++;
+        }
+        if (playRound(playerChoice, computerChoice).charAt(4) === 'L') {
+            computer++;
+        }
+    }
+    if (player > computer) {
+        return "Player Win!";
+    } else if (computer > player) {
+        return "Computer Win!";
+    } else {
+        return "It is a Draw.";
     }
 }
