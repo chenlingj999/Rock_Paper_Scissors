@@ -32,7 +32,7 @@ function playRound(playerChoice, computerChoice) {
         return "It is a draw"
     }
 }
-function game() {
+/* function game() {
     let player = 0;
     let computer = 0;
     for (let i = 0; i < 5; i++){
@@ -56,3 +56,13 @@ function game() {
 }
 
 console.log(game());
+*/
+
+const choice = document.querySelectorAll('.choice')
+choice.forEach(button => {
+    button.addEventListener('click', (event) => {
+        const currButton = event.currentTarget;
+        console.log(currButton.textContent);
+        //console.log(playRound(currButton.textContent.toString(), getComputerChoice()));
+    });
+});
