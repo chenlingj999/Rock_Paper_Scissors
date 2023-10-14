@@ -69,6 +69,9 @@ console.log(game());
 const playerPoints = document.querySelector('#currPlayerScore');
 const compPoints = document.querySelector('#currCompScore');
 const winner = document.querySelector('#winner');
+let rock = document.querySelector('#rock');
+let paper = document.querySelector('#paper');
+let scissors = document.querySelector('#scissors');
 
 const match_res = document.querySelector('.result');
 function createResult(result) {
@@ -89,20 +92,31 @@ choice.forEach(button => {
 
         if (player === 5) {
             winner.textContent = "Player Won Against Computer!";
-            disableButton();
+            endGame();
         }
         if (computer === 5) {
             winner.textContent = "Computer Won Against Player!";
-            disableButton();
+            endGame();
         }
     });
 });
 
-function disableButton() {
-    let rock = document.querySelector('#rock');
-    let paper = document.querySelector('#paper');
-    let scissors = document.querySelector('#scissors');
+function endGame() {
     rock.disabled = true;
     paper.disabled = true;
     scissors.disabled = true;
 }
+
+const replay = document.querySelector('#replay');
+replay.addEventListener('click', () => {
+    replay.disabled = true;
+    match_res.innerHTML = '';
+    winner.textContent = '';
+    player = 0;
+    computer = 0;
+    playerPoints.textContent = player;
+    compPoints.textContent = computer;
+    rock.disabled = false;
+    paper.disabled = false;
+    scissors.disabled = false;
+})
