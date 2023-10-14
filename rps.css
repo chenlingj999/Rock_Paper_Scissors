@@ -50,3 +50,24 @@ body {
     justify-content: space-around;
     align-items: center;
 }
+
+#rock,
+#paper,
+#scissors {
+    height: 200px;
+    width: 200px;
+    font-size: large;
+    font-weight: bold;
+}
+
+#rock {
+    background-image: url('rock.png');
+}
+
+#paper {
+    background-image: url('paper.png');
+}
+
+#scissors {
+    background-image: url('scissors.png');
+}
