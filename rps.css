@@ -62,7 +62,7 @@ body {
 #scissors {
     height: 300px;
     width: 300px;
-    font-size: large;
+    font-size: 40px;
     font-weight: bold;
     border-radius: 100px;
 }
