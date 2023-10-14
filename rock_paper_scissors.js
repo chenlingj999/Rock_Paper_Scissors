@@ -68,6 +68,7 @@ console.log(game());
 */
 const playerPoints = document.querySelector('#currPlayerScore');
 const compPoints = document.querySelector('#currCompScore');
+const winner = document.querySelector('#winner');
 
 const match_res = document.querySelector('.result');
 function createResult(result) {
@@ -82,7 +83,26 @@ choice.forEach(button => {
         match_res.appendChild(
             createResult(playRound(event.target.textContent, getComputerChoice()))
         );
+
         playerPoints.textContent = player;
         compPoints.textContent = computer;
+
+        if (player === 5) {
+            winner.textContent = "Player Won Against Computer!";
+            disableButton();
+        }
+        if (computer === 5) {
+            winner.textContent = "Computer Won Against Player!";
+            disableButton();
+        }
     });
 });
+
+function disableButton() {
+    let rock = document.querySelector('#rock');
+    let paper = document.querySelector('#paper');
+    let scissors = document.querySelector('#scissors');
+    rock.disabled = true;
+    paper.disabled = true;
+    scissors.disabled = true;
+}
