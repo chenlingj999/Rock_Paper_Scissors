@@ -18,6 +18,7 @@ body {
     justify-content: space-around;
     font-size: 48px;
     font-weight: 800;
+    max-height: 500px;
 }
 
 .comp,
@@ -38,11 +39,13 @@ body {
     justify-content: center;
     font-size: 42px;
     font-weight: 1000;
-    max-height: 200px;
+    max-height: 100px;
 }
 
 .choice {
     justify-content: space-around;
+    max-height: 3000px;
+    align-items: center;
 }
 
 .end {
@@ -54,8 +57,8 @@ body {
 #rock,
 #paper,
 #scissors {
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 300px;
     font-size: large;
     font-weight: bold;
 }
