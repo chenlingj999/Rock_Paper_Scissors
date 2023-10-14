@@ -101,9 +101,11 @@ function endGame() {
     rock.disabled = true;
     paper.disabled = true;
     scissors.disabled = true;
+    replay.disabled = false;
 }
 
 const replay = document.querySelector('#replay');
+replay.disabled = true;
 replay.addEventListener('click', () => {
     replay.disabled = true;
     match_res.textContent = 'Make a Choice.';
