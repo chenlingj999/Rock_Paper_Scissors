@@ -61,8 +61,6 @@ console.log(game());
 const choice = document.querySelectorAll('.choice')
 choice.forEach(button => {
     button.addEventListener('click', (event) => {
-        const currButton = event.currentTarget;
-        console.log(currButton.textContent);
-        //console.log(playRound(currButton.textContent.toString(), getComputerChoice()));
+        console.log(playRound(event.target.textContent, getComputerChoice()));
     });
 });
