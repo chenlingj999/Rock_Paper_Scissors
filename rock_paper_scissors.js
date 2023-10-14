@@ -4,6 +4,9 @@ function getComputerChoice() {
     return choices[randomInt];
 }
 
+let player = 0;
+let computer = 0;
+
 function playRound(playerChoice, computerChoice) {
     if (playerChoice.length === 0 || computerChoice.length === 0) {
         return undefined;
@@ -17,16 +20,22 @@ function playRound(playerChoice, computerChoice) {
         throw new Error("Invalid Input.");
     }
     if (makeValid === "Rock" && computerChoice === "Paper"){
+        computer++;
         return "You Lose! Paper beats Rock";
     } else if (makeValid == "Paper" && computerChoice === "Scissors") {
+        computer++;
         return "You Lose! Scissors beats Paper";
     } else if (makeValid == "Scissors" && computerChoice === "Rock") {
+        computer++;
         return "You Lose! Rock beats Scissors";
     } else if (makeValid == "Rock" && computerChoice === "Scissors") {
+        player++;
         return "You Win! Rock beats Scissors";
     } else if (makeValid == "Paper" && computerChoice === "Rock") {
+        player++
         return "You Win! Paper beats Rock";
     } else if (makeValid == "Scissors" && computerChoice === "Paper") {
+        player++
         return "You Win! Scissors beats Paper";
     } else {
         return "It is a draw"
@@ -57,6 +66,8 @@ function playRound(playerChoice, computerChoice) {
 
 console.log(game());
 */
+const playerPoints = document.querySelector('#currPlayerScore');
+const compPoints = document.querySelector('#currCompScore');
 
 const match_res = document.querySelector('.result');
 function createResult(result) {
@@ -71,7 +82,7 @@ choice.forEach(button => {
         match_res.appendChild(
             createResult(playRound(event.target.textContent, getComputerChoice()))
         );
+        playerPoints.textContent = player;
+        compPoints.textContent = computer;
     });
 });
-
-
