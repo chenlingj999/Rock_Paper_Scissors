@@ -58,9 +58,20 @@ function playRound(playerChoice, computerChoice) {
 console.log(game());
 */
 
+const match_res = document.querySelector('.result');
+function createResult(result) {
+    let res = document.createElement('p');
+    res.textContent = result;
+    return res;
+} 
+
 const choice = document.querySelectorAll('.choice')
 choice.forEach(button => {
     button.addEventListener('click', (event) => {
-        console.log(playRound(event.target.textContent, getComputerChoice()));
+        match_res.appendChild(
+            createResult(playRound(event.target.textContent, getComputerChoice()))
+        );
     });
 });
+
+
