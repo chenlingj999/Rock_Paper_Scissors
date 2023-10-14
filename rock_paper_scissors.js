@@ -97,15 +97,18 @@ choice.forEach(button => {
     });
 });
 
+const replay = document.querySelector('#replay');
 function endGame() {
     rock.disabled = true;
     paper.disabled = true;
     scissors.disabled = true;
     replay.disabled = false;
+    replay.style.visibility = 'visible'
 }
 
-const replay = document.querySelector('#replay');
+
 replay.disabled = true;
+replay.style.visibility = 'hidden'
 replay.addEventListener('click', () => {
     replay.disabled = true;
     match_res.textContent = 'Make a Choice';
@@ -117,4 +120,5 @@ replay.addEventListener('click', () => {
     rock.disabled = false;
     paper.disabled = false;
     scissors.disabled = false;
+    replay.style.visibility = 'hidden'
 })
