@@ -74,18 +74,14 @@ let paper = document.querySelector('#paper');
 let scissors = document.querySelector('#scissors');
 
 const match_res = document.querySelector('.result');
-function createResult(result) {
-    let res = document.createElement('p');
-    res.textContent = result;
-    return res;
+function updateResult(result) {
+    match_res.textContent = result;
 } 
 
 const choice = document.querySelectorAll('.choice')
 choice.forEach(button => {
     button.addEventListener('click', (event) => {
-        match_res.appendChild(
-            createResult(playRound(event.target.textContent, getComputerChoice()))
-        );
+        updateResult(playRound(event.target.textContent, getComputerChoice()));
 
         playerPoints.textContent = player;
         compPoints.textContent = computer;
@@ -110,7 +106,7 @@ function endGame() {
 const replay = document.querySelector('#replay');
 replay.addEventListener('click', () => {
     replay.disabled = true;
-    match_res.innerHTML = '';
+    match_res.textContent = 'Make a Choice.';
     winner.textContent = '';
     player = 0;
     computer = 0;
